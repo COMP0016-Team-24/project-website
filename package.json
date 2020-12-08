@@ -1,0 +1,16 @@
+{
+  "name": "comp0016-website",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "parcel build --public-url . index.html",
+    "serve": "parcel serve index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/COMP0016-Team-24/project-website.git"
+  },
+  "devDependencies": {
+    "parcel": "^1.12.4",
+    "sass": "^1.30.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+	"name": "Node",
+	"build": {
+		"dockerfile": "Dockerfile",
+	},
+
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+
+	"extensions": [
+		"eamodio.gitlens",
+		"robinbentley.sass-indented"
+	],
+
+	"remoteUser": "node"
+}
