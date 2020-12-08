@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<title>NTTData4 - lab virtual assistant v2</title>
 		<link rel="stylesheet" href="assets/css/base.sass">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
 		<h1>NTTData4 - lab virtual assistant v2
@@ -14,18 +15,120 @@
 			<a href="https://comp0016-team-24.github.io/">blog</a>
 		</div>
 
+		<p>
+			This project is an improved version of <a href="https://students.cs.ucl.ac.uk/2019/group24/index.html">last year's team 24 project</a>.
+			Specifically, we build upon their code and add a number of new client requirements, as well as improving existing installation process.
+		</p>
+
+		<p>
+			We also have a third year student&mdash;Brandon Tan&mdash;working on this project at the same time. Our team and the third year student
+			focus on different tasks, and we will indicate requirements that are not ours with <span class="breq">a light colour</span>.
+		</p>
+
+		<h2>Background</h2>
+
+		<p>
+			In short, the virtual assistant project is about building a digital avatar that is displayed on a lab TV/screen that visitors to
+			and workers in the lab can interact with via voice command. The assistant should be able to give user an introduction to the lab and
+			the company, and be able to handle different queries about the lab or the company.
+		</p>
+
+		<p>
+			For example, if the company organizes a VR workshop in the lab, after being led to the lab by reception, visitors should be able to ask the
+			assistant about what happens next, where to go, etc. and possibly also have the assistant help demostrate some of the VR features in the lab.
+		</p>
+
 		<h2>Requirements</h2>
+
+		<ul>
+			<li>
+				Improve background
+				<p>
+					Currently the avatar shows on an empty background. We plan to add some natural feature matching current weather.
+				</p>
+			</li>
+			<li>
+				Keeping user engaged while waiting for a response
+				<p>
+					This could involve the use of some loading animation
+				</p>
+			</li>
+			<li>
+				Reporting
+				<p>
+					The client suggested a monitoring interface to show usage of the assistant.
+				</p>
+			</li>
+			<li>
+				IoT integration
+				<p>
+					This would involve making the assistant able to control building lights, etc.
+				</p>
+			</li>
+			<li>
+				Navigation
+				<p>
+					Visitors to the lab should be able to ask the assistant where to go for a certain place or event, and the assistant
+					should be able to show a map, along with voice directions.
+				</p>
+			</li>
+			<li>
+				Simplify installation
+				<p>
+					Currently, setting up the assistant involves the deployment of multiple moving pieces (see <a href="#system-design"># System Design</a>).
+					Ideally this should be improved to a one-click install and run.
+				</p>
+			</li>
+			<li>
+				Configurable 3D model
+				<p>
+					Currently the assistant have only one 3D form. We aim to be able to support using multiple models, so that
+					the company or the user can choose the 3D avatar they like the most.
+				</p>
+			</li>
+			<li class="breq">
+				Lip sync
+				<p>
+					One of Brandon's major requirement, to make the mouth show the correct shape when Alexa is speaking.
+				</p>
+			</li>
+			<li class="breq">
+				Emotions / expressions
+				<p>
+					Also one of Brandon's area, to make the avatar able to convey appropiate emotions to the user via facial features.
+				</p>
+			</li>
+			<li class="breq">
+				Translation / act as a translator
+			</li>
+			<li class="breq">
+				More responsive AI
+			</li>
+			<li class="breq">
+				Display user input
+			</li>
+		</ul>
+
 		<h2>Research</h2>
 		<h2>UI Design</h2>
-		<h2>System Design</h2>
+		<h2 id="system-design">System Design</h2>
 		<h2>Implementation</h2>
 		<h2>Testing</h2>
 		<h2>Evaluation</h2>
 
 		<div class="footer">
-			This is a UCL Computer Science coursework.<br>
-			{Insert copyright info}<br>
-			{Insert contacts}
+			<div class="left">
+				This is a <a href="https://www.ucl.ac.uk/module-catalogue/modules/systems-engineering/COMP0016">UCL Computer Science :: COMP0016</a> coursework.<br>
+				Website bundled with Parcel. <a href="https://github.com/COMP0016-Team-24/project-website">Source code</a>
+			</div>
+			<div class="right">
+				2nd Year team members:<br>
+				<ul>
+					<li>Tingmao <a href="mailto:tingmao.wang.19@ucl.ac.uk">tingmao.wang.19@ucl.ac.uk</a></li>
+					<li>Victoria <a href="mailto:victoria.xiao.19@ucl.ac.uk">victoria.xiao.19@ucl.ac.uk</a></li>
+					<li>Kaloyan <a href="mailto:kaloyan.rusev.19@ucl.ac.uk">kaloyan.rusev.19@ucl.ac.uk</a></li>
+				</ul>
+			</div>
 		</div>
 	</body>
 </html>
