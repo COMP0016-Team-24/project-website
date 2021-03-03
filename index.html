@@ -11,25 +11,69 @@
 			<div>Project website</div>
 		</h1>
 		<div class="nav">
-			<a class="current">home</a>
+			<a href="#home">home</a>
+			<a href="#requirements">requirements</a>
+			<a href="#hci">hci</a>
+			<a href="#research">research</a>
+			<a href="#ui-design">UI design</a>
+			<a href="system-design">system design</a>
+			<a href="#implementation">implementation</a>
+			<a href="#testing">testing</a>
+			<a href="#evaluation">evaluation</a>
 			<a href="https://comp0016-team-24.github.io/">blog</a>
 		</div>
 
+		<h2 id="home">Home</h2>
+		
+		<h3>Project Title: Lab Virtual Assistant v2</h3>
+		<!-- TODO: update with project abstract later -->
 		<p>
-			This project is an improved version of <a href="https://students.cs.ucl.ac.uk/2019/group24/index.html">last year's team 24 project</a>.
-			Specifically, we build upon their code and add a number of new client requirements, as well as improving existing installation process.
+			For this project, we worked with NTTDATA to build an improved version of <a href="https://students.cs.ucl.ac.uk/2019/group24/index.html">last year's team 24 project</a>, a lab virtual assistant. 
+			Specifically, we build upon their code to make the assistant more engaging to interact with, more configurable, as well as improving existing installation process. 
 		</p>
+		
+		<!-- TODO: need to talk about the solution + achievement and impact -->
 
 		<p>
 			We also have a third year student&mdash;Brandon Tan&mdash;working on this project at the same time. Our team and the third year student
 			focus on different tasks, and we will indicate requirements that are not ours with <span class="breq">a light colour</span>.
 		</p>
 
-		<h2>Background</h2>
+		<h3>Project video</h3>
+
+		<h3>Development Team</h3>
+		<!-- not sure why this doesn't work :-( -->
+		<div class="third">
+			<img src="assets/images/temp.jpg" alt="photo" style="width: 200px;height: 200px; margin-top: 1em">
+			<h3>Tingmao Wang <br></h3><a href="mailto:tingmao.wang.19@ucl.ac.uk"><img src="assets/images/mail.png" style="height: 64px;width: 64px;"></a>
+			<a href="https://github.com/micromaomao"><img src="assets/images/github-logo.png" style="height: 64px;width: 64px;">
+		</div>
+
+		<div class="third">
+			<img src="assets/images/temp.jpg" alt="photo" style="width: 200px;height: 200px; margin-top: 1em">
+			<h3>Victoria Xiao<br></h3><a href="mailto:victoria.xiao.19@ucl.ac.uk"><img src="assets/images/mail.png" style="height: 64px;width: 64px;"></a>
+			<a href="https://github.com/victoriax01"><img src="assets/images/github-logo.png" style="height: 64px;width: 64px;">
+			
+		</div>
+		<div class="third">
+			<img src="assets/images/temp.jpg" alt="photo" style="width: 200px;height: 200px; margin-top: 1em">
+			<h3>Kaloyan Rusev <br></h3><a href="mailto:kaloyan.rusev.19@ucl.ac.uk"><img src="assets/images/mail.png"style="height: 64px;width: 64px;"></a>
+			<a href="https://github.com/kalcho100"><img src="assets/images/github-logo.png" style="height: 64px;width: 64px;">
+		</div>
+
+		<h3>Project management</h3>
+		
+		<h4>Gantt Chart</h4> 
+		<!-- incomplete, will need updating -->
+		<img src="assets/images/gantt_chart_03032021.png" alt="gantt chart" style="width:90%;height:90%">
+
+		<h2 id="requirements">Requirements</h2>
+
+		<h3>Project Background and Client Introduction</h3>
 
 		<p>
-			In short, the virtual assistant project is about building a digital avatar that is displayed on a lab TV/screen that visitors to
-			and workers in the lab can interact with via voice command. The assistant should be able to give user an introduction to the lab and
+			The virtual assistant project is about building a digital avatar that is to be displayed on a lab TV/screen. Visitors
+			and employees in the lab can interact with the assistant via voice commands. The assistant should be able to give the user an introduction to the lab and
 			the company, and be able to handle different queries about the lab or the company.
 		</p>
 
@@ -38,54 +82,132 @@
 			assistant about what happens next, where to go, etc. and possibly also have the assistant help demostrate some of the VR features in the lab.
 		</p>
 
-		<h2>Requirements</h2>
+		<!-- TODO: add client introduction (NTTDATA is...) -->
 
+		<h3>Project Goal</h3>
+
+		<p>The goal of our project is to improve the existing solution and make the assistant more professional, engaging and be able to perform more tasks.</p>
+
+		<h3>Requirement gathering</h3>
+		
+		<p>
+			In our first meeting with the client, we asked about the requirements and were given some ideas of what we could achieve throughout this project. In the following meetings, we clarified and agreed on the requirements. The client occasionally added requirements throughout the project timeline.
+		</p>
+
+		<h3>Personas</h3>
+		<h4>Peter Jensen</h4>
+		<img src="assets/images/persona1.jpg" alt="persona1" style="width:75%;height:75%">
+		<p>
+			Peter Jensen is a technology enthusiast who is attending a workshop at NTTDATA. He uses the assistant to find out what room his workshop is in and receive directions to get there. He is happy he is able to talk with the assistant naturally.
+		</p>
+
+		<h4>Joseph Richardson</h4>
+		<img src="assets/images/persona2.jpg" alt="persona2" style="width:75%;height:75%">
+		<p>
+			Joseph Richardson is an employee who manages the assistant. He is not familiar with complex programming so he wants a system that is easy to set up, configure and maintain. He found the lab assistant's set up to be very straightforward.
+		</p>
+
+		<h3>Use case diagram</h3>
+		<img src="assets/images/use_case.png" alt="use_case_diagram" style="width:50%;height:50%">
+
+		<h3>Use case list</h3>
+		<h4>Lab visitor</h4>
 		<ul>
 			<li>
-				Improve background
+				Interact with the assistant using natural language
+			</li>
+			<li>
+				Ask for information about the company
+			</li>
+			<li>
+				Ask for a video to be shown about the company
+			</li>
+			<li>
+				Ask for directions
+			</li>
+			<li>
+				Change the language of the assistant
+			</li>
+		</ul>
+		<h4>System manager</h4>
+		<ul>
+			<li>
+				Interact with the assistant using natural language
+			</li>
+			<li>
+				Set up the assistant on their own systems, with both portrait and landscape being possible
+			</li>
+			<li>
+				Configure the navigation system to add and specify directions to rooms
+			</li>
+			<li>
+				Ask for usage information about the assistant
+			</li>
+			<li>
+				Configure IoT integration
+			</li>
+		</ul>
+
+		<h3>MoSCoW requirement list</h3>
+		<!-- TODO: need to modify to specify which are functional & which are non-functional -->
+		<h4>Must Have</h4>
+		<ul>
+			<li>
+				We must implement a <b>better background</b>
 				<p>
-					Currently the avatar shows on an empty background. We plan to add some natural feature matching current weather.
+					Currently the avatar shows an empty background. We plan to implement a feature to match the background to the current weather.
 				</p>
 			</li>
 			<li>
-				Keeping user engaged while waiting for a response
-				<p>
-					This could involve the use of some loading animation
-				</p>
-			</li>
-			<li>
-				Reporting
-				<p>
-					The client suggested a monitoring interface to show usage of the assistant.
-				</p>
-			</li>
-			<li>
-				IoT integration
-				<p>
-					This would involve making the assistant able to control building lights, etc.
-				</p>
-			</li>
-			<li>
-				Navigation
+				We must implement a <b>navigation system</b>
 				<p>
 					Visitors to the lab should be able to ask the assistant where to go for a certain place or event, and the assistant
 					should be able to show a map, along with voice directions.
 				</p>
 			</li>
 			<li>
-				Simplify installation
+				We must <b>simplify the installation</b>
 				<p>
 					Currently, setting up the assistant involves the deployment of multiple moving pieces (see <a href="#system-design"># System Design</a>).
 					Ideally this should be improved to a one-click install and run.
 				</p>
 			</li>
 			<li>
-				Configurable 3D model
+				We must have a <b>configurable 3D model</b>
 				<p>
-					Currently the assistant have only one 3D form. We aim to be able to support using multiple models, so that
-					the company or the user can choose the 3D avatar they like the most.
+					Currently the assistant only has one 3D form. We aim to be able to support using multiple models, so that
+					the company or the user can select the 3D avatar they like the most.
 				</p>
 			</li>
+			<li>
+				We must support <b>portrait orientation support</b>
+				<p>
+					Currently the assistant only supports landscape mode. The assistant must be able to adjust accordingly to both landscape and portrait monitors/TV screens.
+				</p>
+			</li>
+		</ul>
+		<h4>Should Have</h4>
+		<ul>
+			<li>
+				We should implement an interface to allow <b>reporting</b>
+				<p>
+					The client suggested a monitoring interface to show usage of the assistant.
+				</p>
+			</li>
+			<li>
+				We should have <b>IoT integration</b>>
+				<p>
+					This would involve making the assistant able to control building lights, etc.
+				</p>
+			</li>
+		</ul>
+		
+		<h4>Could Have</h4>
+
+		<h4>Won't Have</h4>
+
+		<h4>Brandon's requirements</h4>
+		<ul>
 			<li class="breq">
 				Lip sync
 				<p>
@@ -99,6 +221,12 @@
 				</p>
 			</li>
 			<li class="breq">
+				Keeping user engaged while waiting for a response
+				<p>
+					This could involve the use of some loading animation
+				</p>
+			</li>
+			<li class="breq">
 				Translation / act as a translator
 			</li>
 			<li class="breq">
@@ -109,12 +237,65 @@
 			</li>
 		</ul>
 
-		<h2>Research</h2>
-		<h2>UI Design</h2>
+		<h2 id="hci">HCI</h2>
+
+		<h3> Sketches </h3>
+		<p>
+			After gathering our requirements, we created hand-drawn sketches to explore the ways we could design the interface to integrate the design principles (visibility, feedback, affordance, consistency, constraints). Originally, we had 2 sets of sketches. After some user feedback, we decided to use these as our final sketches.
+		</p>
+
+		<img src="assets/images/sketch_config.jpg" alt="sketch_config" style="width:30%;height:200px">
+		<img src="assets/images/sketch_captions.jpg" alt="sketch_captions" style="width:25%;height:200px">
+		<img src="assets/images/sketch_video.jpg" alt="sketch_video" style="width:25%;height:200px">
+
+		<h3>Interactive Prototype Video</h3>
+		<p>
+			Using Balsamiq Cloud, we created an interactive prototype to show our design ideas and the interaction between the assistant and the user, here is the video. The speech bubbles represent voice commands from the user.
+		</p>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/9dLzVgGIIl8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+		<h3>Prototype Evaluation</h3>
+		<p>We used an analytic evaluation by evaluating our prototype through heuristics.</p>
+		<table style="width:100%">
+			<tr>
+				<th>Location</th>
+				<th>Heuristic</th>
+				<th>Problem</th>
+				<th>Solution</th>
+				<th>Severity</th>
+			</tr>
+			<tr>
+				<th>Configuration page ​</th>
+				<th>Help and documentation</th>
+				<th>There is no guidance on how to setup the configuration page.</th>
+				<th>Create a help popup in the configuration page</th>
+				<th>3</th>
+			</tr>
+			<tr>
+				<th>Location</th>
+				<th>Visibility of system status</th>
+				<th>Once a voice command is inputted, there is no indication if the system is taking a while to respond or if it has crashed.</th>
+				<th>Have an animated thought bubble above avatar to represent that system is processing.</th>
+				<th>2</th>
+			</tr>
+			<tr>
+				<th>Location</th>
+				<th>Recognition rather than recall</th>
+				<th>User may forget how to activate or ask for some specific things from the assistant.</th>
+				<th>Display suggested questions if a user is detected but there is no input.</th>
+				<th>2</th>
+			</tr>
+		</table>
+		<h3>References</h3>
+		<p>
+			Preece, J., Sharp, H., & Rogers, Y. (2019). Interaction design: beyond human-computer interaction, Wiley, 5th Edition Section 1.7.3
+		</p>
+		<h2 id="research">Research</h2>
+		<h2 id="ui-design">UI Design</h2>
 		<h2 id="system-design">System Design</h2>
-		<h2>Implementation</h2>
-		<h2>Testing</h2>
-		<h2>Evaluation</h2>
+		<h2 id="implementation">Implementation</h2>
+		<h2 id="testing">Testing</h2>
+		<h2 id="evaluation">Evaluation</h2>
 
 		<div class="footer">
 			<div class="left">
