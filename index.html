@@ -42,22 +42,31 @@
 		<h3>Project video</h3>
 
 		<h3>Development Team</h3>
+		<div>
+			<div class="left">
+				test
+			</div>
+			<div class="right">
+				test2
+			</div>
+
+		</div>
 		<!-- not sure why this doesn't work :-( -->
-		<div class="third">
-			<img src="assets/images/temp.jpg" alt="photo" style="width: 200px;height: 200px; margin-top: 1em">
-			<h3>Tingmao Wang <br></h3><a href="mailto:tingmao.wang.19@ucl.ac.uk"><img src="assets/images/mail.png" style="height: 64px;width: 64px;"></a>
+		<div class="left">
+			<img src="assets/images/temp.jpg" alt="photo" style="width: 200px;height: 200px; margin-top: 1em; border-radius: 10px;">
+			<h3>Tingmao Wang </h3><a href="mailto:tingmao.wang.19@ucl.ac.uk"><img src="assets/images/mail.png" style="height: 64px;width: 64px;"></a>
 			<a href="https://github.com/micromaomao"><img src="assets/images/github-logo.png" style="height: 64px;width: 64px;">
 		</div>
 
-		<div class="third">
-			<img src="assets/images/temp.jpg" alt="photo" style="width: 200px;height: 200px; margin-top: 1em">
-			<h3>Victoria Xiao<br></h3><a href="mailto:victoria.xiao.19@ucl.ac.uk"><img src="assets/images/mail.png" style="height: 64px;width: 64px;"></a>
+		<div class="right">
+			<img src="assets/images/temp.jpg" alt="photo" style="width: 200px;height: 200px; margin-top: 1em; border-radius: 10px">
+			<h3>Victoria Xiao</h3><a href="mailto:victoria.xiao.19@ucl.ac.uk"><img src="assets/images/mail.png" style="height: 64px;width: 64px;"></a>
 			<a href="https://github.com/victoriax01"><img src="assets/images/github-logo.png" style="height: 64px;width: 64px;">
 			
 		</div>
 		<div class="third">
-			<img src="assets/images/temp.jpg" alt="photo" style="width: 200px;height: 200px; margin-top: 1em">
-			<h3>Kaloyan Rusev <br></h3><a href="mailto:kaloyan.rusev.19@ucl.ac.uk"><img src="assets/images/mail.png"style="height: 64px;width: 64px;"></a>
+			<img src="assets/images/temp.jpg" alt="photo" style="width: 200px;height: 200px; margin-top: 1em; border-radius: 10px">
+			<h3>Kaloyan Rusev</h3><a href="mailto:kaloyan.rusev.19@ucl.ac.uk"><img src="assets/images/mail.png"style="height: 64px;width: 64px;"></a>
 			<a href="https://github.com/kalcho100"><img src="assets/images/github-logo.png" style="height: 64px;width: 64px;">
 		</div>
 
@@ -96,7 +105,7 @@
 
 		<h3>Personas</h3>
 		<h4>Peter Jensen</h4>
-		<img src="assets/images/persona1.jpg" alt="persona1" style="width:75%;height:75%">
+		<img src="assets/images/persona1.jpg" alt="persona1" style="width:75%;height:75%;">
 		<p>
 			Peter Jensen is a technology enthusiast who is attending a workshop at NTTDATA. He uses the assistant to find out what room his workshop is in and receive directions to get there. He is happy he is able to talk with the assistant naturally.
 		</p>
@@ -108,7 +117,7 @@
 		</p>
 
 		<h3>Use case diagram</h3>
-		<img src="assets/images/use_case.png" alt="use_case_diagram" style="width:50%;height:50%">
+		<img src="assets/images/use_case.png" alt="use_case_diagram" style="width:50%;height:50%;">
 
 		<h3>Use case list</h3>
 		<h4>Lab visitor</h4>
@@ -180,7 +189,7 @@
 				</p>
 			</li>
 			<li>
-				We must support <b>portrait orientation support</b>
+				We must support <b>portrait orientation</b>
 				<p>
 					Currently the assistant only supports landscape mode. The assistant must be able to adjust accordingly to both landscape and portrait monitors/TV screens.
 				</p>
@@ -244,13 +253,13 @@
 			After gathering our requirements, we created hand-drawn sketches to explore the ways we could design the interface to integrate the design principles (visibility, feedback, affordance, consistency, constraints). Originally, we had 2 sets of sketches. After some user feedback, we decided to use these as our final sketches.
 		</p>
 
-		<img src="assets/images/sketch_config.jpg" alt="sketch_config" style="width:30%;height:200px">
-		<img src="assets/images/sketch_captions.jpg" alt="sketch_captions" style="width:25%;height:200px">
-		<img src="assets/images/sketch_video.jpg" alt="sketch_video" style="width:25%;height:200px">
+		<img src="assets/images/sketch_config.jpg" alt="sketch_config" style="height:250px;">
+		<img src="assets/images/sketch_captions.jpg" alt="sketch_captions" style="height:250px;">
+		<img src="assets/images/sketch_video.jpg" alt="sketch_video" style="height:250px;">
 
 		<h3>Interactive Prototype Video</h3>
 		<p>
-			Using Balsamiq Cloud, we created an interactive prototype to show our design ideas and the interaction between the assistant and the user, here is the video. The speech bubbles represent voice commands from the user.
+			Using Balsamiq Cloud, we created an interactive prototype to show our design ideas and the interaction between the assistant and the user, here is the video. The speech bubbles represent voice commands from the user. (Note: the info button on the config page was added after the prototype evaluation)
 		</p>
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/9dLzVgGIIl8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -265,25 +274,25 @@
 				<th>Severity</th>
 			</tr>
 			<tr>
-				<th>Configuration page ​</th>
-				<th>Help and documentation</th>
-				<th>There is no guidance on how to setup the configuration page.</th>
-				<th>Create a help popup in the configuration page</th>
-				<th>3</th>
+				<td>Configuration page ​</td>
+				<td>Help and documentation</td>
+				<td>There is no guidance on how to setup the configuration page.</td>
+				<td>Create a help popup in the configuration page</td>
+				<td>3</td>
 			</tr>
 			<tr>
-				<th>Location</th>
-				<th>Visibility of system status</th>
-				<th>Once a voice command is inputted, there is no indication if the system is taking a while to respond or if it has crashed.</th>
-				<th>Have an animated thought bubble above avatar to represent that system is processing.</th>
-				<th>2</th>
+				<td>Location</td>
+				<td>Visibility of system status</td>
+				<td>Once a voice command is inputted, there is no indication if the system is taking a while to respond or if it has crashed.</td>
+				<td>Have an animated thought bubble above avatar to represent that system is processing.</td>
+				<td>2</td>
 			</tr>
 			<tr>
-				<th>Location</th>
-				<th>Recognition rather than recall</th>
-				<th>User may forget how to activate or ask for some specific things from the assistant.</th>
-				<th>Display suggested questions if a user is detected but there is no input.</th>
-				<th>2</th>
+				<td>Location</td>
+				<td>Recognition rather than recall</td>
+				<td>User may forget how to activate or ask for some specific things from the assistant.</td>
+				<td>Display suggested questions if a user is detected but there is no input.</td>
+				<td>2</td>
 			</tr>
 		</table>
 		<h3>References</h3>
