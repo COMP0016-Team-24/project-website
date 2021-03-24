@@ -2,8 +2,8 @@
   "name": "comp0016-website",
   "version": "0.0.0",
   "scripts": {
-    "build": "parcel build --public-url . index.html license-details.html",
-    "serve": "parcel serve index.html license-details.html"
+    "build": "parcel build --public-url . index.html license-details.html video.html",
+    "serve": "parcel serve index.html license-details.html video.html"
   },
   "repository": {
     "type": "git",
