@@ -309,13 +309,64 @@
 			We found a project, <a href="https://www.loomi.ai/">Loomi</a>, which is similar to our project as it is a virtual personal assistant. The project is in closed beta so we were unable to test the project but
 		</p> -->
 
+		<h3>Automated installation tool</h3>
+
+		<p>
+			We originally attempted to make the project runnable with just one installer which automatically supports both the unity client and the Alexa client. We researched about how to make that possible.
+		</p>
+
+		<p>
+			For example, since we use Python, we wanted to "package" our python code such that user doesn't need to have Python installed or install any pip dependencies themselves. We found <a href="https://www.pyinstaller.org/index.html">PyInstaller</a> which seemed like a viable option. It packages the application along with its dependencies and Python into a standalone executable, which is easy to install and run.
+		</p>
+
+		<p>
+			However, not all dependencies will work, especially if the Python package relies on native code that needs to be compiled. There is a <a href="https://github.com/pyinstaller/pyinstaller/wiki/Supported-Packages">list of supported packages</a>, but it doesn't include pyaudio, for example. We did not attempt to build it since we decided to go with another approach later on.
+		</p>
+
 		<h2 id="ui-design">UI Design</h2>
 		<h2 id="system-design">System Design</h2>
 
 		<img src="assets/images/system-arch.svg" alt="System Architecture Diagram" class="sysarch">
 
+		<p>
+			As seen above, this project contain 3 separate but connected components.
+		</p>
+
+		<ul>
+			<li>
+				<p>
+					The skill server's address will be entered as the "skill endpoint" on Amazon. When our skill is invoked by any Alexa device or clients, Amazon will send a request to our server, and we would have a chance to return a response for the user's query, as well as sending control messages to the Unity front end.
+				</p>
+				<p>
+					This is a Flask (Python) http(s) server. We used a "HTTP polling" approach (due to websocket library not working properly) for sending messages to Unity. Unity will periodically request <code>/msg</code>, and the server will return the current state, which consists of what the current response is, whether Unity should play video, etc. as well as the timestamp of when the state was updated last.
+				</p>
+			</li>
+			<li>
+				<p>
+					The Alexa client runs on the client's machine along with the unity client, and handle microphone input, calling the Alexa Voice Service API, as well as sending the audio responses received from Alexa to unity. It is actually a patched version of the official Alexa client written in C++ slightly modified by us, such as outputin the audio to a file instead of playing it out, etc.
+				</p>
+				<p>
+					To communicate with Unity, it starts up a local http server and use the same polling approach used in the skill server.
+				</p>
+				<p>
+					Note that the official Alexa client does not contain hot word detection (recognizing when the user calls "Alexa" and hence start listening for query). This is implemented by using an third-party library in the python script.
+				</p>
+			</li>
+			<li>
+				<p>
+					The unity client, which contains the actual user interface and communicates with the two components above.
+				</p>
+			</li>
+		</ul>
+
+
 		<h2 id="implementation">Implementation</h2>
 		<h2 id="testing">Testing</h2>
+
+		<p>
+			To ensure reliability, we wrote automated unit tests for the skill using our test Alexa client and a unity unit test which uses the unity test runner.
+		</p>
+
 		<h2 id="evaluation">Evaluation</h2>
 		<h3>Summary of achievements</h3>
 		<h4>MoSCoW Table</h4>
