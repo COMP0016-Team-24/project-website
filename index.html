@@ -14,7 +14,6 @@
 			<a href="#home">home</a>
 			<a href="#requirements">requirements</a>
 			<a href="#legal">legal</a>
-			<a href="#hci">hci</a>
 			<a href="#research">research</a>
 			<a href="#ui-design">ui design</a>
 			<a href="#system-design">system design</a>
@@ -249,9 +248,33 @@
 			For ease of development, this project provides pre-compiled binaries made with Unity, usage of which are subject to restrictions in the <a href="https://unity3d.com/legal/terms-of-service/software">Unity Software Additional Terms</a>. This is not legal advice.
 		</p>
 
-		<h2 id="hci">HCI</h2>
+		<h2 id="research">Research</h2>
 
-		<h3> Sketches </h3>
+		<!-- <h3>Related Project Review</h3>
+		<p>
+			We found a project, <a href="https://www.loomi.ai/">Loomi</a>, which is similar to our project as it is a virtual personal assistant. The project is in closed beta so we were unable to test the project but
+		</p> -->
+
+		<h3>Automated installation tool</h3>
+
+		<p>
+			We originally attempted to make the project runnable with just one installer which automatically supports both the unity client and the Alexa client. We researched about how to make that possible.
+		</p>
+
+		<p>
+			For example, since we use Python, we wanted to "package" our python code such that user doesn't need to have Python installed or install any pip dependencies themselves. We found <a href="https://www.pyinstaller.org/index.html">PyInstaller</a> which seemed like a viable option. It packages the application along with its dependencies and Python into a standalone executable, which is easy to install and run.
+		</p>
+
+		<p>
+			However, not all dependencies will work, especially if the Python package relies on native code that needs to be compiled. There is a <a href="https://github.com/pyinstaller/pyinstaller/wiki/Supported-Packages">list of supported packages</a>, but it doesn't include pyaudio, for example. We did not attempt to build it since we decided to go with another approach later on.
+		</p>
+
+		<h2 id="ui-design">UI Design</h2>
+
+		<h3>Design Principles</h3> 
+		<!-- TODO: add design principles (e.g. simplicity, consistency, visibility, feedback, tolerance, etc.) -->
+
+		<h3>Sketches</h3>
 		<p>
 			After gathering our requirements, we created hand-drawn sketches to explore the ways we could design the interface to integrate the design principles (visibility, feedback, affordance, consistency, constraints). Originally, we had 2 sets of sketches. After some user feedback, we decided to use these as our final sketches.
 		</p>
@@ -302,34 +325,13 @@
 		<p>
 			Preece, J., Sharp, H., & Rogers, Y. (2019). Interaction design: beyond human-computer interaction, Wiley, 5th Edition Section 1.7.3
 		</p>
-		<h2 id="research">Research</h2>
 
-		<!-- <h3>Related Project Review</h3>
-		<p>
-			We found a project, <a href="https://www.loomi.ai/">Loomi</a>, which is similar to our project as it is a virtual personal assistant. The project is in closed beta so we were unable to test the project but
-		</p> -->
-
-		<h3>Automated installation tool</h3>
-
-		<p>
-			We originally attempted to make the project runnable with just one installer which automatically supports both the unity client and the Alexa client. We researched about how to make that possible.
-		</p>
-
-		<p>
-			For example, since we use Python, we wanted to "package" our python code such that user doesn't need to have Python installed or install any pip dependencies themselves. We found <a href="https://www.pyinstaller.org/index.html">PyInstaller</a> which seemed like a viable option. It packages the application along with its dependencies and Python into a standalone executable, which is easy to install and run.
-		</p>
-
-		<p>
-			However, not all dependencies will work, especially if the Python package relies on native code that needs to be compiled. There is a <a href="https://github.com/pyinstaller/pyinstaller/wiki/Supported-Packages">list of supported packages</a>, but it doesn't include pyaudio, for example. We did not attempt to build it since we decided to go with another approach later on.
-		</p>
-
-		<h2 id="ui-design">UI Design</h2>
 		<h2 id="system-design">System Design</h2>
 
 		<img src="assets/images/system-arch.svg" alt="System Architecture Diagram" class="sysarch">
 
 		<p>
-			As seen above, this project contain 3 separate but connected components.
+			As seen above, this project contains 3 separate but connected components.
 		</p>
 
 		<ul>
@@ -361,6 +363,21 @@
 
 
 		<h2 id="implementation">Implementation</h2>
+
+		<h3>Adaptive Background based on the Weather</h3>
+		<p>
+			One of our requirements was to improve the background. The client suggested a background that shows a different weather state depending on the real time weather. 
+		</p>
+		<p>
+			The implementation of this mainly involves Unity scripts and calling a Weather API to receive information about the live weather. There is a <a href="https://docs.unity3d.com/ScriptReference/Coroutine".html>coroutine</a> in weatherControl.cs which calls the <a href="https://openweathermap.org/api">weather api</a> using <a href="https://docs.unity3d.com/ScriptReference/Networking.UnityWebRequest.html">UnityWebRequests</a>. Then using <a href="https://github.com/Bunny83/SimpleJSON">SimpleJSON</a> to parse the JSON from the API, the system knows the weather. 
+		</p>
+		<p>
+			There are many different weather states so the script groups them into 4 states: Clear, Clouds, Rain and Snow. Clouds, Rain and Snow share the same skybox of a cloudy background. Rain and Snow use <a href="https://docs.unity3d.com/ScriptReference/ParticleSystem.html">particle systems</a> to create their visual effects. Clear uses its own skybox with a clear sky.
+		</p>
+		<p>
+			The main Update() method of the script calls the coroutine every 10 minutes since the API is limited to 60 calls per minute and 1,000,000 calls per month.
+		</p>
+		
 		<h2 id="testing">Testing</h2>
 
 		<p>
