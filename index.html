@@ -11,7 +11,6 @@
 			<div>Project website</div>
 		</h1>
 		<div class="nav">
-			<a href="#home">home</a>
 			<a href="#requirements">requirements</a>
 			<a href="#legal">legal</a>
 			<a href="#research">research</a>
@@ -23,8 +22,6 @@
 			<a href="https://comp0016-team-24.github.io/">blog</a>
 		</div>
 		<script src="assets/shadow-control.js"></script>
-
-		<h2 id="home">Home</h2>
 
 		<h3>Project Title: Lab Virtual Assistant v2</h3>
 		<!-- TODO: update with project abstract later -->
@@ -271,7 +268,7 @@
 
 		<h2 id="ui-design">UI Design</h2>
 
-		<h3>Design Principles</h3> 
+		<h3>Design Principles</h3>
 		<!-- TODO: add design principles (e.g. simplicity, consistency, visibility, feedback, tolerance, etc.) -->
 
 		<h3>Sketches</h3>
@@ -287,7 +284,7 @@
 		<p>
 			Using Balsamiq Cloud, we created an interactive prototype to show our design ideas and the interaction between the assistant and the user, here is the video. The speech bubbles represent voice commands from the user. (Note: the info button on the config page was added after the prototype evaluation)
 		</p>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/9dLzVgGIIl8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<iframe class="video-aspect-fit" width="560" height="315" src="https://www.youtube-nocookie.com/embed/9dLzVgGIIl8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		<img src="assets/images/speech_bubbles.JPG" alt="speech_bubbles" style="height:315px;width: 560px;">
 		<h3>Prototype Evaluation</h3>
 		<p>We used an analytic evaluation by evaluating our prototype through heuristics.</p>
@@ -400,10 +397,10 @@
 		<h3>Adaptive Background based on the Weather</h3>
 
         <p>
-            One of our requirements was to improve the background. The client suggested a background that shows a different weather state depending on the real time weather. 
+            One of our requirements was to improve the background. The client suggested a background that shows a different weather state depending on the real time weather.
         </p>
         <p>
-            The implementation of this mainly involves Unity scripts and calling a Weather API to receive information about the live weather. There is a <a href="https://docs.unity3d.com/ScriptReference/Coroutine".html>coroutine</a> in weatherControl.cs which calls the <a href="https://openweathermap.org/api">weather api</a> using <a href="https://docs.unity3d.com/ScriptReference/Networking.UnityWebRequest.html">UnityWebRequests</a>. Then using <a href="https://github.com/Bunny83/SimpleJSON">SimpleJSON</a> to parse the JSON from the API, the system knows the weather. 
+            The implementation of this mainly involves Unity scripts and calling a Weather API to receive information about the live weather. There is a <a href="https://docs.unity3d.com/ScriptReference/Coroutine".html>coroutine</a> in weatherControl.cs which calls the <a href="https://openweathermap.org/api">weather api</a> using <a href="https://docs.unity3d.com/ScriptReference/Networking.UnityWebRequest.html">UnityWebRequests</a>. Then using <a href="https://github.com/Bunny83/SimpleJSON">SimpleJSON</a> to parse the JSON from the API, the system knows the weather.
         </p>
         <p>
             There are many different weather states so the script groups them into 4 states: Clear, Clouds, Rain and Snow. Clouds, Rain and Snow share the same skybox of a cloudy background. Rain and Snow use <a href="https://docs.unity3d.com/ScriptReference/ParticleSystem.html">particle systems</a> to create their visual effects. Clear uses its own skybox with a clear sky.
