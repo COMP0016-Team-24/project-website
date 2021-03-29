@@ -25,38 +25,55 @@
 		<script src="assets/shadow-control.js"></script>
 
 		<h3>Project Title: Lab Virtual Assistant v2</h3>
-		<!-- TODO: update with project abstract later -->
+		<h4>Project Abstract</h4>
 		<p>
-			For this project, we worked with NTTDATA to build an improved version of <a href="https://students.cs.ucl.ac.uk/2019/group24/index.html">last year's team 24 project</a>, a lab virtual assistant. It is a set of components which together allows a user to talk to an animated avatar backed by Alexa. We build upon their code to make the assistant more engaging to interact with, more configurable, as well as improving existing installation process and adding extra features.
+			For this project, we worked with NTT DATA to build an improved version of <a href="https://students.cs.ucl.ac.uk/2019/group24/index.html">last year's team 24 project</a>, a lab virtual assistant. It is a set of components which together allows a user to talk to an animated avatar backed by Alexa. The existing implementation requires a large amount of setup and also looks quite plain. There is also a lack of features the assistant can do.
 		</p>
 
-		<!-- TODO: need to talk about the solution + achievement and impact -->
+		<p>
+			We build upon their code to make the assistant more engaging to interact with, more configurable, as well as improving the existing installation process and adding extra features tailored for company usage.
+		</p>
 
 		<p>
-			We also have a third year student&mdash;Brandon Tan&mdash;working on this project at the same time. Our team and the third year student
-			focus on different tasks, and we will list requirements that are not ours separately.
+			We hope with our changes, the project will be more accessible to companies and encourage the use of virtual assistants in a working environment.
+		</p>
+
+		<p>
+			<b>Note:</b> We also have a third year student&mdash;Brandon Tan&mdash;working on this project at the same time. Our team and the third year student will focus on different tasks, and we will list requirements that are not ours separately.
 		</p>
 
 		<h3>Project Video</h3>
 		<iframe class="video-aspect-fit" style="width: 100%; height: 400px;" src="https://www.youtube-nocookie.com/embed/C-20sJ5b8uc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 		<h3>Development Team</h3>
-		<!-- TODO: add roles of team members -->
+
 		<div class="team">
 			<div class="left">
 				<img src="https://www.gravatar.com/avatar/6dd7d517f1b93e4a5b7688d11dbb31f4?size=200&d=identicon" alt="photo" style="width: 200px;height: 200px; margin-top: 1em; border-radius: 10px;">
-				<h3>Tingmao Wang </h3><a href="mailto:tingmao.wang.19@ucl.ac.uk"><img src="assets/images/mail.png" class="member-icon"></a>
+				<h3>Tingmao Wang </h3>
+				<p>
+					Researcher, Programmer, Tester
+				</p>
+				<a href="mailto:tingmao.wang.19@ucl.ac.uk"><img src="assets/images/mail.png" class="member-icon"></a>
 				<a href="https://github.com/micromaomao"><img src="assets/images/github-logo.png" class="member-icon">
 			</div>
 			<div class="middle">
-				<img src="assets/images/icon.png" alt="photo" style="width: 200px;height: 200px; margin-top: 1em; border-radius: 10px">
-				<h3>Victoria Xiao</h3><a href="mailto:victoria.xiao.19@ucl.ac.uk"><img src="assets/images/mail.png" class="member-icon"></a>
-				<a href="https://github.com/victoriax01"><img src="assets/images/github-logo.png" class="member-icon">
+				<img src="https://www.gravatar.com/avatar/58056c0f55794be43ddfa806b0b9ee4f?size=200&d=identicon" alt="photo" style="width: 200px;height: 200px; margin-top: 1em; border-radius: 10px">
+				<h3>Kaloyan Rusev</h3>
+				<p>
+					Researcher, Programmer
+				</p>
+				<a href="mailto:kaloyan.rusev.19@ucl.ac.uk"><img src="assets/images/mail.png"class="member-icon"></a>
+				<a href="https://github.com/kalcho100"><img src="assets/images/github-logo.png" class="member-icon">
 			</div>
 			<div class="right">
-				<img src="https://www.gravatar.com/avatar/58056c0f55794be43ddfa806b0b9ee4f?size=200&d=identicon" alt="photo" style="width: 200px;height: 200px; margin-top: 1em; border-radius: 10px">
-				<h3>Kaloyan Rusev</h3><a href="mailto:kaloyan.rusev.19@ucl.ac.uk"><img src="assets/images/mail.png"class="member-icon"></a>
-				<a href="https://github.com/kalcho100"><img src="assets/images/github-logo.png" class="member-icon">
+				<img src="assets/images/icon.png" alt="photo" style="width: 200px;height: 200px; margin-top: 1em; border-radius: 10px">
+				<h3>Victoria Xiao</h3>
+				<p>
+					Client liaison​, Report Editor, UI designer
+				</p>
+				<a href="mailto:victoria.xiao.19@ucl.ac.uk"><img src="assets/images/mail.png" class="member-icon"></a>
+				<a href="https://github.com/victoriax01"><img src="assets/images/github-logo.png" class="member-icon">
 			</div>
 		</div>
 
@@ -67,20 +84,21 @@
 
 		<h2 id="requirements">Requirements</h2>
 
-		<h3>Project Background and Client Introduction</h3>
+		<h3>Project Background</h3>
 
 		<p>
-			The virtual assistant project is about building a digital avatar that is to be displayed on a lab TV/screen. Visitors
-			and employees in the lab can interact with the assistant via voice commands. The assistant should be able to give the user an introduction to the lab and
-			the company, and be able to handle different queries about the lab or the company.
+			The project is about building a digital avatar that is to be displayed on a lab TV/screen. Visitors and employees in the lab can interact with the assistant via voice commands. The assistant should be able to give the user an introduction to the lab and the company, and be able to handle different queries about the lab or the company.
 		</p>
 
 		<p>
-			For example, if the company organizes a VR workshop in the lab, after being led to the lab by reception, visitors should be able to ask the
-			assistant about what happens next, where to go, etc. and possibly also have the assistant help demonstrate some of the VR features in the lab.
+			For example, if the company organizes a VR workshop in the lab, after being led to the lab by reception, visitors should be able to ask the	assistant about what happens next, where to go, etc. and possibly also have the assistant help demonstrate some of the VR features in the lab through videos.
 		</p>
 
-		<!-- TODO: add client introduction (NTTDATA is...) -->
+		<h3>Client Introduction</h3>
+
+		<p>
+			NTT DATA is a global IT Innovator who deliver technology enabled services to clients. They have labs which often hold workshops and demos which many people attend. Our project aims to upgrade a virtual assistant which will be deployed in their labs. 
+		</p>
 
 		<h3>Project Goal</h3>
 
