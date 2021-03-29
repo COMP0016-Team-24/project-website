@@ -258,7 +258,7 @@
 		<h3>Automated installation tool</h3>
 
 		<p>
-			We originally attempted to make the project runnable with just one installer which automatically supports both the unity client and the Alexa client. We researched about how to make that possible.
+			We originally attempted to make the project runnable with just one installer which automatically supports both the Unity client and the Alexa client. We researched about how to make that possible.
 		</p>
 
 		<p>
@@ -335,7 +335,7 @@
 		<img src="assets/images/system-arch.svg" alt="System Architecture Diagram" class="sysarch">
 
 		<p>
-			As seen above, this project contains 3 separate but connected components, which together supports our Alexa integration. Essentially, user's queries are listened and sent by the Alexa client to the Alexa voice service to be processed by Amazon. If the user uses our skill, the Alexa voice service will send requests over https to our skill server, which will process the request and send the text response back to Alexa. It would also send control messages to the unity front-end (which is the "UI" of this system) to facilitate video playing, lip sync, navigation, etc.
+			As seen above, this project contains 3 separate but connected components, which together supports our Alexa integration. Essentially, user's queries are listened and sent by the Alexa client to the Alexa voice service to be processed by Amazon. If the user uses our skill, the Alexa voice service will send requests over https to our skill server, which will process the request and send the text response back to Alexa. It would also send control messages to the Unity front-end (which is the "UI" of this system) to facilitate video playing, lip sync, navigation, etc.
 		</p>
 
 		<p>
@@ -361,10 +361,10 @@
 						We changed it to output mp3 files instead of playing the Alexa response.
 					</li>
 					<li>
-						We changed it to take input from a temproary file instead of stdin, so that our Python script can control it.
+						We changed it to take input from a temporary file instead of stdin, so that our Python script can control it.
 					</li>
 					<li>
-						We changed it to output Alexa response to a temproary file, so that our Python script can pass the text response onto Unity to do lip-sync.
+						We changed it to output Alexa response to a temporary file, so that our Python script can pass the text response onto Unity to do lip-sync.
 					</li>
 				</ul>
 				<p>
@@ -376,7 +376,7 @@
 			</li>
 			<li>
 				<p>
-					Finally, the unity client uses basic C# code to talk with the two components above via HTTP(S).
+					Finally, the Unity client uses basic C# code to talk with the two components above via HTTP(S).
 				</p>
 			</li>
 		</ul>
@@ -415,7 +415,7 @@
 		<h2 id="testing">Testing</h2>
 
 		<p>
-			To ensure reliability, we wrote automated unit tests for the skill using our test Alexa client and a unity unit test which uses the unity test runner.
+			To ensure reliability, we wrote automated unit tests for the skill using our test Alexa client and a Unity unit test which uses the Unity test runner.
 		</p>
 
 		<h2 id="evaluation">Evaluation</h2>
@@ -533,8 +533,8 @@
 			</tr>
 			<tr>
 				<td>1​</td>
-				<td></td>
-				<td></td>
+				<td>Face detection often fails if the lighting where the user's face is located is too dark</td>
+				<td>Low</td>
 			</tr>
 		</table>
 
