@@ -449,6 +449,16 @@
             The main Update() method of the script calls the coroutine every 10 minutes since the API is limited to 60 calls per minute and 1,000,000 calls per month.
         </p>
 
+		<h3>Smooth Face Tracking</h3>
+
+		<p>
+			The face tracking involves usage of a library called <a href="https://assetstore.unity.com/packages/tools/integration/opencv-plus-unity-85928">OpenCV plus Unity</a>. The implementation of this library is the same as last year's team, linked <a href="http://students.cs.ucl.ac.uk/2019/group24/index.html#design">here</a>. To repeat, the user's face is detected using a webcam. The webcam view is horizontally split into 7 sections (columns). The user's face is located in 1 of the 7 sections and this value is returned from the script. The value is then used to control the assistant's rotation.
+		</p>
+		
+		<p>
+			The player script works as follows: the script gets the value of the avatar's rotation and converts it to an integer. If this value is greater than 180, it means the avatar has rotated in the negative direction (since the rotation values Unity scripts receive are never negative) so 360 will need to be subtracted from the rotation value. If the value received from the face tracking script is not the same value as the angle of the avatar (they are set to map equally to each other), then the head and/or the body will keep rotating until it reaches the same value.
+		</p>
+
 		<h2 id="testing">Testing</h2>
 
 		<p>
