@@ -287,6 +287,28 @@
 			However, not all dependencies will work, especially if the Python package relies on native code that needs to be compiled. There is a <a href="https://github.com/pyinstaller/pyinstaller/wiki/Supported-Packages">list of supported packages</a>, but it doesn't include pyaudio, for example. We did not attempt to build it since we decided to go with another approach later on.
 		</p>
 
+		<h3>Detecting rooms on a floor plan</h3>
+
+		<p>
+			Our first idea for how the navigation feature of the assistant should work was to prompt the user, setting up the assistant, to draw the maps to each room in a GUI. However, that seemed too time consuming and annoying for them, so we decided to automate this task, so the user should only upload an image of the floor plan. We researched about any existing libraries or algorithms that can help with this task. 
+		</p>
+
+		<p>
+			After thorough research we did manage to find some existing solutions. However, none of these solutions were quite suitable for our case.
+		</p>
+
+		<p>
+			 The ones we found about detecting rooms in an architectural floor plan were too complex to implement in the given time slot (<a href="https://www.researchgate.net/publication/220933144_A_System_to_Detect_Rooms_in_Architectural_Floor_Plan_Images">example</a>), <a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Zeng_Deep_Floor_Plan_Recognition_Using_a_Multi-Task_Network_With_Room-Boundary-Guided_ICCV_2019_paper.pdf">exampl2</a>).
+		</p>
+
+		<p>
+			The other option, we came up with, was to detect just the lines and their intersections and from the results, to calculate where the rooms are. However, in this case the solutions we found (<a href="https://stackoverflow.com/questions/16665742/a-good-approach-for-detecting-lines-in-an-image">like this one</a> and <a href="https://stackoverflow.com/questions/45322630/how-to-detect-lines-in-opencv">this one</a>) were either not quite accurate (detected a line twice or not detect it at all) or required too much processing power.
+		</p>
+
+		<p>
+			As a final solution, we decided to develop our own algorithm for this problem.
+		</p>
+
 		<h2 id="ui-design">UI Design</h2>
 
 		<h3>Design Principles</h3>
@@ -418,6 +440,53 @@
 			</li>
 		</ul>
 
+		<h3>Detecting rooms on a floor plan</h3>
+
+		<p>
+			After not being able to find a suitable existing solution for how to detect rooms on a floor plan, we developed our own. Here is how it works:
+		</p>
+
+		<ul>
+			<li>
+				It requires that the only black pixels are the walls and that there aren’t any holes in the walls (e.g., doors, windowsm etc).
+			</li>
+
+			<li>
+				The rooms are stored as hashmaps - the keys are all the y coordinates, the room contains, and the values are a list with the first and last x coordinates contained in the room of the corresponding y coordinate. This way all possible shapes of rooms can be stored.
+			</li>
+
+			<li>
+				The algorithm iterates through every pixel, line by line, and searches for white pixels. When it finds one, it stores it and continue iterating the current line until its end or a black pixel is found. This range of white pixels is now assigne to a room. The way this is done, is by checking the previous line for white pixels in the specified range. If one is found then the range is assigned to the same room as the found pixel [1]. If no white pixel is found or this is the first line, a new room is created and the range of pixels is assigned to it.
+			</li>
+		</ul>
+
+		<p>
+			With this algorithm, heart-shaped rooms are detected as two rooms, instead of only one. To fix this, we added a loop that iterates through all the rooms and fixes these problems. If 2 rooms contain lines that are next to each other and the ranges of white pixels have at least one pixel in common the 2 rooms are combined into 1. The loop continues until it iterates consecutively through all the remaining rooms without having to combine any 2 of them.
+		</p>
+
+		<p>
+			[1] For fast checking which room a pixel belongs to, an array with length h*w is created (h-height of the picture, w-width of the picture) to store which room is each pixel assigned to. Pixel (x, y) would be indexed (y*h + x) in the array and it can easily be checked which room is it assigned to. When a range of white pixels and the room it belongs to are found, each element in the array, corresponding to a pixel in the range is updated with the room that is found.
+		</p>
+
+		<h3>Getting the best route to each room</h3>
+
+		<p>To fully automate the set up for the navigation feature, after detecting where the rooms are, we needed to also get the best route to them. Here is how it is done:</p>
+
+		<ol>
+			<li>
+				It uses objects, to represent each possible route, that consist of the pixels the current route has already passed by, length of the route and the staright line distance from the last pixel to the desired end of the route. These objects are kept sorted in a linked list, based on the sum of the length of the route and the remaining distance.
+			</li>
+			<li>
+				It starts from the pixel where the assistant is and from the 9 pixels around it creates 9 objects.
+			</li>
+			<li>
+				After the initial 9 objects are created, it takes the first one (they are sorted, so this is the one which has the smallest sum of length and distance) and creates new objects from the pixels around it that haven't been used. These objects contain the intial object's list of previous pixels and add the new pixels to it.
+			</li>
+			<li>
+				Step 3 is repeated until an object with distance to the end 0 is created. This is assumed to be the best route.
+			</li>
+		</ol>
+
 		<h3>Installation</h3>
 
 		<p>
@@ -433,6 +502,16 @@
 		<p>
 			Configuration for the Unity front-end are read from a JSON file. We wrote a html page to generate such JSON file with a UI for some configuration changes, so that user doesn't need to manually modify JSON themselves.
 		</p>
+
+		<h3>Setting up the navigation</h3>
+
+		<p>
+			For this task, we created a very Simple GUI where the user should just upload a picture of a floor plan and enter the names to each room.
+		</p>
+
+		<img src="assets/images/Navigation-gui-1.png" alt="GUI home screen" style="height:315px;width: 560px;">
+		<img src="assets/images/Navigation-gui-2.png" alt="GUI upload screen" style="height:315px;width: 560px;">
+		<img src="assets/images/Navigation-gui-3.png" alt="GUI room screen" style="height:315px;width: 560px;">
 
 		<h3>Adaptive Background based on the Weather</h3>
 
