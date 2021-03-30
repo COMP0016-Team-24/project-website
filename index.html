@@ -167,7 +167,11 @@
 		</ul>
 
 		<h3>MoSCoW requirement list</h3>
-		<!-- TODO: need to modify to specify which are functional & which are non-functional -->
+		
+		<p>
+			Given the nature of our project, all requirements are <b>functional</b>
+		</p>
+
 		<h4>Must Have</h4>
 		<ul>
 			<li>
@@ -185,7 +189,7 @@
 			<li>
 				We must <b>simplify the installation</b>
 				<p>
-					Currently, setting up the assistant involves the deployment of multiple moving pieces (see <a href="#system-design"># System Design</a>).
+					Currently, setting up the assistant involves the deployment of multiple components.
 					Ideally this should be improved to a one-click install and run.
 				</p>
 			</li>
@@ -269,6 +273,9 @@
 			<li>
 				Display user input
 			</li>
+			<li>
+				Alexa Client
+			</li>
 		</ul>
 
 		<h2 id="research">Research</h2>
@@ -280,7 +287,7 @@
 		</p>
 
 		<p>
-			For example, since we use Python, we wanted to "package" our python code such that user doesn't need to have Python installed or install any pip dependencies themselves. We found <a href="https://www.pyinstaller.org/index.html">PyInstaller</a> which seemed like a viable option. It packages the application along with its dependencies and Python into a standalone executable, which is easy to install and run.
+			For example, since we use Python, we wanted to "package" our python code such that user doesn't need to have Python installed or install any pip dependencies themselves. We found <a href="https://www.pyinstaller.org/index.html">PyInstaller</a> [1] which seemed like a viable option. It packages the application along with its dependencies and Python into a standalone executable, which is easy to install and run.
 		</p>
 
 		<p>
@@ -302,12 +309,18 @@
 		</p>
 
 		<p>
-			The other option, we came up with, was to detect just the lines and their intersections and from the results, to calculate where the rooms are. However, in this case the solutions we found (<a href="https://stackoverflow.com/questions/16665742/a-good-approach-for-detecting-lines-in-an-image">like this one</a> and <a href="https://stackoverflow.com/questions/45322630/how-to-detect-lines-in-opencv">this one</a>) were either not quite accurate (detected a line twice or not detect it at all) or required too much processing power.
+			The other option, we came up with, was to detect just the lines and their intersections and from the results, to calculate where the rooms are. However, in this case the solutions we found (<a href="https://stackoverflow.com/questions/16665742/a-good-approach-for-detecting-lines-in-an-image">like this one</a> and <a href="https://stackoverflow.com/questions/45322630/how-to-detect-lines-in-opencv">this one</a>) were either not quite accurate (detected a line twice or not detect it at all) or required too much processing power. [2]
 		</p>
 
 		<p>
 			As a final solution, we decided to develop our own algorithm for this problem.
 		</p>
+
+		<h4>References</h4>
+
+		<p>[1] PyInstaller. [Online]. Available: <a href="https://www.pyinstaller.org/index.html">https://www.pyinstaller.org/index.html</a> [Accessed Mar. 14, 2021]</p>
+
+		<p>[2] OpenCV. [Online]. Available: <a href="https://opencv.org/">https://opencv.org/</a> [Accessed Feb. 2, 2021]</p>
 
 		<h2 id="ui-design">UI Design</h2>
 
@@ -650,7 +663,7 @@
 		</table>
 
 		<h4>Known Bug List</h4>
-		<!-- TODO: bug list -->
+
 		<table style="width:100%">
 			<tr>
 				<th>ID</th>
@@ -776,14 +789,9 @@
 			The back end of the assistant is run on Amazon's Alexa Voice Service which is used widely across the world so it is considerably stable. Although a poor internet connection may result in slower responses. We have removed the need to run a Linux virtual machine which improves the overall stability of the project. Hardware may also impact the project - poorer system hardware may cause the project to function poorly.
 		</p>
 
-		<h4>Efficiency</h4>
-		<p>
-			<!-- TODO: write this, help idk what to write here ;-; -->
-		</p>
-
 		<h4>Compatibility</h4>
 		<p>
-			<!-- TODO: write this -->
+			The face tracking feature does not work on Linux machines so the Unity front end should be ideally run on Windows (we have not tested MacOS but in principle it should work). The Alexa Client can be run on Linux (it is actually designed to be run on Linux), we have used mingw to allow it to run on Windows so it can be run on the same machine as the Unity front end without the need of a vm. The skill server can in principle be run on Windows but we did not test or investigate this.
 		</p>
 
 		<h4>Maintainability</h4>
