@@ -305,11 +305,11 @@
 		</p>
 
 		<p>
-			 The ones we found about detecting rooms in an architectural floor plan were too complex to implement in the given time slot (<a href="https://www.researchgate.net/publication/220933144_A_System_to_Detect_Rooms_in_Architectural_Floor_Plan_Images">example</a>, <a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Zeng_Deep_Floor_Plan_Recognition_Using_a_Multi-Task_Network_With_Room-Boundary-Guided_ICCV_2019_paper.pdf">example2</a>).
+			 The ones we found about detecting rooms in an architectural floor plan were too complex to implement in the given time slot (see [2][3]).
 		</p>
 
 		<p>
-			The other option, we came up with, was to detect just the lines and their intersections and from the results, to calculate where the rooms are. However, in this case the solutions we found (<a href="https://stackoverflow.com/questions/16665742/a-good-approach-for-detecting-lines-in-an-image">like this one</a> and <a href="https://stackoverflow.com/questions/45322630/how-to-detect-lines-in-opencv">this one</a>) were either not quite accurate (detected a line twice or not detect it at all) or required too much processing power. [2]
+			The other option, we came up with, was to detect just the lines and their intersections and from the results, to calculate where the rooms are. However, in this case the solutions we found (<a href="https://stackoverflow.com/questions/16665742/a-good-approach-for-detecting-lines-in-an-image">like this one</a> and <a href="https://stackoverflow.com/questions/45322630/how-to-detect-lines-in-opencv">this one</a>) were either not quite accurate (detected a line twice or not detect it at all) or required too much processing power. [4]
 		</p>
 
 		<p>
@@ -320,7 +320,15 @@
 
 		<p>[1] PyInstaller. [Online]. Available: <a href="https://www.pyinstaller.org/index.html">https://www.pyinstaller.org/index.html</a> [Accessed Mar. 14, 2021]</p>
 
-		<p>[2] OpenCV. [Online]. Available: <a href="https://opencv.org/">https://opencv.org/</a> [Accessed Feb. 2, 2021]</p>
+		<p>
+			[2] H. Locteau, S. Macé, E. Valveny and S. Tabbone, "A System to Detect Rooms in Architectural Floor Plan Images", <i>ACM International Conference Proceeding Series,</i> 167-174, 10.1145/1815330.1815352, 2010. [Online]. Available: <a href="https://www.researchgate.net/publication/220933144_A_System_to_Detect_Rooms_in_Architectural_Floor_Plan_Images">https://www.researchgate.net/publication/220933144_A_System_to_Detect_Rooms_in_Architectural_Floor_Plan_Images</a> [Accessed Feb. 2, 2021]
+		</p>
+
+		<p>
+			[3] Z. Zeng, X. Li, Y. K. Yu and C. Fu, "Deep Floor Plan Recognition Using a Multi-Task Network With Room-Boundary-Guided Attention," <i>2019 IEEE/CVF International Conference on Computer Vision (ICCV),</i> Seoul, Korea (South), 2019, pp. 9095-9103, doi: 10.1109/ICCV.2019.00919. Available: <a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Zeng_Deep_Floor_Plan_Recognition_Using_a_Multi-Task_Network_With_Room-Boundary-Guided_ICCV_2019_paper.pdf">https://openaccess.thecvf.com/content_ICCV_2019/papers/Zeng_Deep_Floor_Plan_Recognition_Using_a_Multi-Task_Network_With_Room-Boundary-Guided_ICCV_2019_paper.pdf</a>. [Accesssed Feb. 3, 2021]
+		</p>
+
+		<p>[4] OpenCV. [Online]. Available: <a href="https://opencv.org/">https://opencv.org/</a> [Accessed Feb. 5, 2021]</p>
 
 		<h2 id="ui-design">UI Design</h2>
 
@@ -348,7 +356,7 @@
 
 		<h3>Sketches</h3>
 		<p>
-			After gathering our requirements, we created hand-drawn sketches to explore the ways we could design the interface to integrate the design principles (visibility, feedback, affordance, consistency, constraints). Originally, we had 2 sets of sketches. After some user feedback, we decided to use these as our final sketches.
+			After gathering our requirements, we created hand-drawn sketches to explore the ways we could design the interface to integrate the design principles (visibility, feedback, affordance, consistency). Originally, we had 2 sets of sketches. After some user feedback, we decided to use these as our final sketches.
 		</p>
 
 		<img src="assets/images/sketch_config.jpg" alt="sketch_config" style="height:250px;">
@@ -544,7 +552,7 @@
 		<h3>Smooth Face Tracking</h3>
 
 		<p>
-			The face tracking involves usage of a library called <a href="https://assetstore.unity.com/packages/tools/integration/opencv-plus-unity-85928">OpenCV plus Unity</a>. The implementation of this library is the same as last year's team, linked <a href="http://students.cs.ucl.ac.uk/2019/group24/index.html#design">here</a>. To repeat, the user's face is detected using a webcam. The webcam view is horizontally split into 7 sections (columns). The user's face is located in 1 of the 7 sections and this value is returned from the script. The value is then used to control the assistant's rotation.
+			The face tracking involves usage of a library called <a href="https://assetstore.unity.com/packages/tools/integration/opencv-plus-unity-85928">OpenCV plus Unity</a>. The implementation of this library is the same as last year's team, linked <a href="http://students.cs.ucl.ac.uk/2019/group24/index.html#design">here</a>. To repeat, the user's face is detected using a webcam. The webcam view is split into 7 sections (columns). The user's face is located in 1 of the 7 sections and this value is returned from the script. The value is then used to control the assistant's rotation.
 		</p>
 		
 		<p>
@@ -562,7 +570,7 @@
 		<h3>User Acceptance Testing</h3>
 
 		<p>
-			Given the nature of our project, user acceptance testing was very important. At the request of our client, we showed them our project every 2 weeks. Rather than showing them the program all the way at the end, we had liaised with them regularly to conduct User Acceptance Testing. This allowed us to receive continuous feedback from our client and accommodate for any changes that they require, whether it may be incorrect outputs or the system simply not working.
+			Given the nature of our project, user acceptance testing was very important. At the request of our client, we showed them our project every 2 weeks. Rather than only showing them the program all the way at the end, we had liaised with them regularly to conduct User Acceptance Testing. This allowed us to receive continuous feedback from our client and accommodate for any changes that they require, whether it may be incorrect outputs or the system simply not working.
 		</p>
 
 		<h2 id="evaluation">Evaluation</h2>
